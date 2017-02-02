@@ -1,0 +1,8 @@
+
+# Derived files
+/build
+
+# Editor
+*~
+*.swp
+
