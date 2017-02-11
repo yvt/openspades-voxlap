@@ -5,11 +5,11 @@
  */
 #pragma once
 
-#include <string>
+#include <vector>
 
 #include <Shared/OSVLLink.h>
 
 namespace osvl {
-	void InitializeServer(const OSVLContextParam &);
-	void HandleIncomingCommand(OSVLCommand type, const std::string &);
+    void InitializeServer(const OSVLContextParam &);
+    void HandleIncomingCommand(OSVLCommand type, const std::vector<char> &);
 }

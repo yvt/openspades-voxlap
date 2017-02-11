@@ -3,6 +3,39 @@ Voxlap Plugin for OpenSpades
 
 **WORK IN PROGRESS**
 
+Building
+--------
+
+This project is separated into two parts: the server and plugin.
+
+The server must be compiled for x86 (*not* x86_64) because this version of Voxlap hasn't been ported to x86_64 yet. On the other hand, the plugin must be built for the architecture which OpenSpades was built for.
+
+### Linux
+
+TODO
+
+### Windows
+
+TODO
+
+### Mac
+
+```bash
+# You have to update nasm to the latest version (2.x) because
+# one that comes with macOS is too old (0.x) to build some 12-year-old library
+sudo port install nasm
+
+mkdir build-server; cd build-server
+cmake -DCMAKE_OSX_ARCHITECTURES=i386 -DCMAKE_ASM_NASM_COMPILER=/opt/local/bin/nasm ../Server
+make
+
+cd ..
+
+mkdir build-plugin; cd build-plugin
+cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 ../Plugin
+make
+```
+
 License
 -------
 
